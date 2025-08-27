@@ -9,7 +9,7 @@ console.log(accountId);
 
 accountEmail = "aditya21@gmail.com";
 accountPassword = "212121";
-accountCity = "Mumbai";
+accountCity = "Benguluru";
 let accountState;
 
 /* 
@@ -23,4 +23,3 @@ console.table([
   accountCity,
   accountState,
 ]);
-

@@ -96,10 +96,38 @@ const user = [
 
 //console.log(user[1].email);
 
-console.log(tinderUser);
+// console.log(tinderUser);
 
-console.log(Object.keys(tinderUser)); // returns an array of keys
-console.log(Object.values(tinderUser)); // returns an array of values
-console.log(Object.entries(tinderUser)); // every element inside an object is an array
+// console.log(Object.keys(tinderUser)); // returns an array of keys
+// console.log(Object.values(tinderUser)); // returns an array of values
+// console.log(Object.entries(tinderUser)); // every element inside an object is an array
 
-console.log(tinderUser.hasOwnProperty("age"));
+//console.log(tinderUser.hasOwnProperty("age"));
+
+// ************** Destructuring object and json api ***********************
+
+const myCourse = {
+  coursename: "js hindi",
+  price: "999",
+  courseInstructor: "hitesh",
+};
+
+//course.courseInstructor
+
+const { courseInstructor: Instructor } = myCourse;
+//console.log(Instructor);
+
+const navbar = ({ company }) => {}; // destructuring
+
+navbar((company = "aditya"));
+
+//JSON API
+/*
+{
+  "name" : "Aditya",
+  "coursename" : "Js in Hindi",
+  "price" : "free"
+}
+  */
+
+[{}, {}, {}, {}];

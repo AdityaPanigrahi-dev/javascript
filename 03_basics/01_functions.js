@@ -44,3 +44,34 @@ function logInUserMessage(username = "Aditya") {
 
 console.log(logInUserMessage()); // returns undefined then rest of string.
 console.log(logInUserMessage("Aditya"));
+
+function caluclateCartPrice(...num1) {
+  // rest operator
+  // it is use for spread operator but called according to use case
+  return num1;
+}
+
+console.log(caluclateCartPrice(200, 400, 600)); // returns array
+
+const user = {
+  username: "aditya",
+  age: 21,
+};
+
+function handleObject(anyobject) {
+  console.log(`username is ${anyobject.username} and age is ${anyobject.age}`);
+}
+
+//console.log(handleObject(user));
+handleObject({
+  username: "Adi",
+  age: 21,
+});
+
+const myNewArray = [10, 20, 30, 40, 50];
+
+function returnSecondValue(getArray) {
+  return getArray[1];
+}
+
+console.log(returnSecondValue(myNewArray));

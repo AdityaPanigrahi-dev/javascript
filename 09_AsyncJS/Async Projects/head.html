@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval(function () {
+    //     console.log("hello", Date.now());
+
+    // }, 2000)
+
+
+
+    const sayDate = function (str) {
+        console.log(`date is ${Date.now()}, ${str}`);
+    }
+
+
+    function stop(start) {
+        const stop = document.querySelector('#stop').addEventListener('click', function () {
+            clearInterval(start)
+            console.log("interval stopped");
+        })
+
+    }
+
+    document.querySelector('#start').addEventListener('click', function () {
+        const start = setInterval(sayDate, 2000, "have a great day")
+        stop(start)
+
+    })
+    //
+
+
+</script>
+
+</html>

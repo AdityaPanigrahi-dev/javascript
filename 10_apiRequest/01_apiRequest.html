@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: gray; color: black;">
+    <div class="card" style="height: 400px; width:400px; padding: 20px; border: 2px solid black;">
+        <img src="" alt="" id="avatar">
+        <button id="showFollowers">Followers</button>
+    </div>
+    <div class="followers"></div>
+</body>
+<script>
+    const url = "https://api.github.com/users/adityapanigrahi"
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            // // console.log(typeof data); // string if not parsed
+            // console.log(data);
+            // console.log(data.followers);
+
+            document.getElementById('avatar').src = data.avatar_url;
+
+            document.getElementById("showFollowers").addEventListener('click', function () {
+                document.querySelector(".followers").innerHTML = `Followers : ${data.followers}`
+            })
+
+        }
+    }
+    xhr.send()
+
+
+
+</script>
+
+</html>

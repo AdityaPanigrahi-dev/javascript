@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+
+<body>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+
+<script>
+    // Lexical scope
+
+
+    // function init() {
+    //     let name = "mozilla"; // name is a local variable created by init
+
+    //     function displayName() {
+    //         // displayname() is the inner function, that forms the closure
+    //         console.log(name); // user varibale declared in the parent function
+    //     }
+    //     displayName();
+    // }
+    // init()
+
+    // function outer() {
+    //     let username = "Aditya"
+    //     console.log("outer");
+
+    //     function inner() {
+    //         let age = 21
+    //         console.log("inner", username);
+
+    //         function inner_inner() {
+    //             console.log("inner-inner", username);
+    //             console.log("inner-inner", age);
+
+    //         }
+    //         inner_inner()
+    //     }
+    //     inner()
+    // }
+    // outer()
+
+
+    // console.log("too outer", username); this gives an error
+    /*
+    outer
+    inner
+    inner-inner
+    // this is the output flow of the above program first the outer function call is executed then the inner function call is executed then inner most function is executed
+    */
+
+    // function init() {
+    //     let name = "mozilla";
+
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+    // const myInit = init();
+    // myInit();
+</script>
+
+<script>
+    // document.getElementById('orange').onclick = function () {
+    //     document.body.style.backgroundColor = 'orange'
+    // }
+
+    // document.getElementById('green').onclick = function () {
+    //     document.body.style.backgroundColor = 'green'
+    // }
+
+    function clickHandler(color) {
+     //   document.body.style.backgroundColor = `${color}`
+
+        return function () {
+            document.body.style.backgroundColor = `${color}`
+        }
+
+    }
+
+    document.getElementById('orange').onclick = clickHandler('orange')
+
+    document.getElementById('green').onclick = clickHandler('green')
+</script>
+
+</html>
